@@ -1,5 +1,6 @@
 @include('components.head')
   
+@section('content')
 
     <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"></div>
@@ -75,4 +76,11 @@
     </div>
     <!-- ##### Brands Area End ##### -->
 
+@show
+
+
+
    @include('components.footer')
+
+
+  
