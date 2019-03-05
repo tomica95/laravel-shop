@@ -1,4 +1,4 @@
-@include('components.head')
+@extends('master')
   
 @section('content')
 
@@ -76,11 +76,7 @@
     </div>
     <!-- ##### Brands Area End ##### -->
 
-@show
-
-
-
-   @include('components.footer')
+@endsection
 
 
   
