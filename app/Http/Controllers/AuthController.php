@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         $user->email = request()->email;
 
-        $user->password = bcrypt(request()->password);
+        $user->password = md5(request()->password);
 
         $user->role_id = "2";
 
@@ -49,5 +49,26 @@ class AuthController extends Controller
 
         return redirect()->back()->with('Message','Successfully registered');
 
+    }
+
+    public function login(){
+
+        $user = User::where([
+            'email'=>request()->email,
+            'password'=>md5(request()->password)
+        ])->first();
+        
+        if($user){
+
+            request()->session()->put('user',$user);
+        
+            return redirect('/');
+        }
+
+
+        return redirect('/login');
+
+
+        
     }
 }

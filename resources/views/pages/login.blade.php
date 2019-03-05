@@ -5,7 +5,8 @@
 <h1>Ovo je login stranica</h1>
 
 <h2>Login</h2>
-<form>
+<form method="POST" action="{{url('login')}}">
+    @csrf 
 
     Email:<input type="text" name="email"></br></br>
     Password:<input type="text" name="password"></br></br>
