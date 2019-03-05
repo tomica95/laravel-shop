@@ -3,13 +3,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- Single Catagory -->
+                @foreach($brands as $brand)
                 <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url({{$brand->src}});">
                         <div class="catagory-content">
-                            <a href="#">Clothing</a>
+                            <a href="{{url('brand/'.$brand->id)}}">{{$brand->name}}</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 
             </div>
         </div>
