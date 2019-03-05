@@ -42,6 +42,7 @@ class AuthController extends Controller
 
         if(!$is_register){
 
+            
             return redirect()->back()->with('Message','Try again');
 
         }
