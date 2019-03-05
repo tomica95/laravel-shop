@@ -13,3 +13,5 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/shop', 'HomeController@shop');
+Route::get('/login','AuthController@show');
+Route::post('/register','AuthController@register');
