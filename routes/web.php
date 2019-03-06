@@ -22,7 +22,9 @@ Route::prefix('admin')->group(function(){
 
     Route::namespace('Admin')->group(function () {
         
-        Route::get('/users','UserController@users');
+        Route::get('/','AdminController@index');
+
+        
         
     });
 });
