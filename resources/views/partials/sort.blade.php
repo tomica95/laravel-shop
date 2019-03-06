@@ -70,7 +70,7 @@
 
                       <!-- filter brands -->
 
-                        @include('partials.filterBrands');
+                        @include('partials.filterBrands')
 
 
                         <!-- end filter brands -->

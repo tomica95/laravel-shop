@@ -13,6 +13,16 @@ Route::post('/register','AuthController@register');
 
 Route::post('/login','AuthController@login');
 
-Route::get('/brand/{id}','ProductsController@products');
+Route::get('/shop/{id?}','ProductsController@products');
 
 Route::get('/product/{id}','ProductsController@product');
+
+//ADMIN
+Route::prefix('admin')->group(function(){
+
+    Route::namespace('Admin')->group(function () {
+        
+        Route::get('/users','UserController@users');
+        
+    });
+});

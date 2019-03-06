@@ -6,18 +6,29 @@ use Illuminate\Http\Request;
 
 use App\Models\Watch;
 
+use App\Models\Brand;
+
 class ProductsController extends Controller
 {
     
-    public function products($id){
-
-        $products_by_id['products']= Watch::where([
-            'brand_id'=>$id
-        ])->get();
-
+    public function products($id = null){
         
+        if($id)
+        {
 
-        return view('pages.shop',$products_by_id);
+            $data['products']= Watch::where([
+                'brand_id'=>$id
+            ])->get();
+
+        }
+        else
+        {
+            $data['products']=Watch::all();
+        }
+
+        $data['brands']=Brand::all();
+
+        return view('pages.shop',$data);
 
 
 
@@ -25,9 +36,11 @@ class ProductsController extends Controller
 
     public function product($id){
 
-        $product['product']=Watch::find($id);
+        $products['product']=Watch::find($id);
 
-        return view('pages.product',$product);
+        
+
+        return view('pages.product',$products);
 
 
     }
