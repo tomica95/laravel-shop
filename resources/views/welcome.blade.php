@@ -60,7 +60,7 @@
                     <div class="popular-products-slides owl-carousel">
 
                        
-                    @include('partials.product')
+                    @include('partials.popularProduct')
                         
                         </div>
                     </div>
