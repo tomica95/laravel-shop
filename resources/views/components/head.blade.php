@@ -17,6 +17,12 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{asset('css/core-style.css')}}">
 
+    <script>
+    var BASE_URL = "{{asset('/')}}";
+    
+    var TOKEN = "{{csrf_token()}}";
+    </script>
+
 </head>
 
 <body>

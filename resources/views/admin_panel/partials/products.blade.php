@@ -13,6 +13,11 @@
         <td>{{$watch->description}}</td>
         <td>{{$watch->price}}</td>
         <td><img src="{{$watch->src}}" width="100" heigth="140"></td>
+        <td>
+        
+        <button class="delete-watch" value="{{$watch->id}}">Delete</button>
+       
+        </td>
     </tr>
     @endforeach
 

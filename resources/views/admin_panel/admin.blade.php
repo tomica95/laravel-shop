@@ -12,7 +12,7 @@
 <!-- end user content -->
 
 <!-- contenct product -->
-    <div class="tabele">
+    <div id="products" class="tabele">
     @include('admin_panel.partials.products')
     </div>
 <!-- end content product -->
@@ -32,4 +32,10 @@
     }
 
 </style>
+@endsection
+
+@section('js')
+
+    <script src="{{asset('js/delete-watch-ajax.js')}}"></script> 
+
 @endsection

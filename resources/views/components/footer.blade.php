@@ -90,6 +90,8 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
 
+    @yield('js')
+
     
 </body>
 

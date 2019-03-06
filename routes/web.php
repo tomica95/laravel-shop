@@ -24,6 +24,8 @@ Route::prefix('admin')->group(function(){
         
         Route::get('/','AdminController@index');
 
+        Route::delete('/delete-watch','WatchController@delete_product');
+
         
         
     });
