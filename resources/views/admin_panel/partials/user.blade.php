@@ -15,6 +15,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->created_at}}</td>
             <td>{{$user->updated_at}}</td>
+            <td><button class="delete-user" value="{{$user->id}}">Delete</button></td>
         </tr>
         @endforeach
 

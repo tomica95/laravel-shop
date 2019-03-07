@@ -26,6 +26,8 @@ Route::prefix('admin')->group(function(){
 
         Route::delete('/delete-watch','WatchController@delete_product');
 
+        Route::delete('/delete-user','UserController@delete_user');
+
         
         
     });
