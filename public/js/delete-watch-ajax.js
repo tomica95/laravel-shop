@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
-    $('#products').click('.delete-watch', function(){
+    $('#products').on('click','.delete-watch',function(){
 
         
         let id = $(this).val();
+
+        console.log(id);
 
       
 
@@ -55,7 +57,7 @@ $(document).ready(function(){
         <td>${watch.name}</td>
         <td>${watch.description}</td>
         <td>${watch.price}</td>
-        <td><img src="${watch.src}}" width="100" heigth="140"></td>
+        <td><img src="${watch.src}" width="100" heigth="140"></td>
         <td>
         
         <button class="delete-watch" value="${watch.id}">Delete</button>

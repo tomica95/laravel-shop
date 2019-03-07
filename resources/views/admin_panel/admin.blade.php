@@ -6,7 +6,7 @@
 
     
 <!-- content user -->
-    <div class="tabele">
+    <div id="users" class="tabele">
     @include('admin_panel.partials.user')
     </div>
 <!-- end user content -->
@@ -19,23 +19,12 @@
 
 </div>
 
-
-<style>
-    #content{
-        margin-top:150px;
-        margin-left:300px;
-        margin-bottom:150px;
-
-    }
-    .tabele{
-        margin-top:30px;
-    }
-
-</style>
 @endsection
 
 @section('js')
 
     <script src="{{asset('js/delete-watch-ajax.js')}}"></script> 
+
+    <script src="{{asset('js/delete-user-ajax.js')}}"></script>
 
 @endsection
