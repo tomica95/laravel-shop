@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Watch;
+use App\Models\Brand;
 
 class WatchController extends Controller
 {
@@ -28,6 +29,26 @@ class WatchController extends Controller
         }
        
 
+    }
+
+    public function delete_category(){
+
+        $id = request('id');
+
+        $category=Brand::destroy($id);
+
+        if(!$category){
+
+            abort(500);
+        }
+        else
+        {
+        
+        $category = Brand::all();
+
+        return $category;
+
+        }
     }
 
 

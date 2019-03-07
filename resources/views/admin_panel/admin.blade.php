@@ -22,8 +22,9 @@
 
 <!-- content categories -->
     <h1>Categories</h1>
+    <div id="categories">
     @include('admin_panel.partials.categories')
-
+    </div>
 <!-- end content categories -->
 
 </div>
@@ -35,5 +36,7 @@
     <script src="{{asset('js/delete-watch-ajax.js')}}"></script> 
 
     <script src="{{asset('js/delete-user-ajax.js')}}"></script>
+
+    <script src="{{asset('js/delete-category-ajax.js')}}"></script>
 
 @endsection
