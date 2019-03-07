@@ -40,3 +40,15 @@
     <script src="{{asset('js/delete-category-ajax.js')}}"></script>
 
 @endsection
+
+
+<style>
+
+    #content{
+
+        margin:150px;
+
+
+    }
+
+</style>
