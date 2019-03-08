@@ -51,5 +51,40 @@ class WatchController extends Controller
         }
     }
 
+    public function insert_product(){
+
+        $id = request('id');
+
+        $name = request('name');
+
+        $description = request('description');
+
+        $price = request('price');
+
+        $watch = new Watch;
+
+        $watch->name = $name;
+
+        $watch->description = $description;
+
+        $watch->src = "Slika.jgp";
+
+        $watch->alt = "Kita";
+
+        $watch->price = $price;
+
+        $watch->brand_id = $id;
+
+        $watch->save();
+
+        $watches = Watch::all();
+
+        return $watches;
+
+
+        
+
+    }
+
 
 }

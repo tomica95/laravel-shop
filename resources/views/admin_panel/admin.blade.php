@@ -27,6 +27,18 @@
     </div>
 <!-- end content categories -->
 
+<!-- insert product -->
+
+    <h1>Insert product </h1>
+
+        <div id="insert">
+
+            @include('admin_panel.partials.insert_product')
+            
+        </div>
+
+<!-- end product -->
+
 </div>
 
 @endsection
@@ -38,6 +50,8 @@
     <script src="{{asset('js/delete-user-ajax.js')}}"></script>
 
     <script src="{{asset('js/delete-category-ajax.js')}}"></script>
+
+    <script src="{{asset('js/insert-product-ajax.js')}}"></script>
 
 @endsection
 
