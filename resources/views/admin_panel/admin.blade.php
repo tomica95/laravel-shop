@@ -63,6 +63,8 @@
     <script src="{{asset('js/delete-category-ajax.js')}}"></script>
 
     <script src="{{asset('js/insert-product-ajax.js')}}"></script>
+    
+    <script src="{{asset('js/insert-user-ajax.js')}}"></script>
 
     
 

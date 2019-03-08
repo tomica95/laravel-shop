@@ -31,6 +31,8 @@ Route::prefix('admin')->group(function(){
         Route::delete('/delete-category','WatchController@delete_category');
 
         Route::post('/insert-product','WatchController@insert_product');
+
+        Route::post('/insert-user','UserController@insert_user');
         
         
     });
