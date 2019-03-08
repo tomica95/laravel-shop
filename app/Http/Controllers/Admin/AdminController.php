@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index(){
 
         
-        $data['users'] = User::all(); //vraca user-e
+        $data['users'] = User::with('role')->get(); //vraca user-e
 
         $data['watches'] = Watch::all(); //vraca satove
 

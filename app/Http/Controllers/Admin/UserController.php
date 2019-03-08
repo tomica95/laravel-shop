@@ -20,7 +20,7 @@ class UserController extends Controller
         }
         else
         {
-            $user = User::all();
+            $user = User::with('role')->get();
            
             return $user;
         }
@@ -38,32 +38,11 @@ class UserController extends Controller
 
         ]);
 
-        $role_id = request('role_id');
+        $user = new User;
 
-        $firstName = request('firstName');
+        $user->insert_user();
 
-        $lastName = request('lastName');
-
-        $email = request('email');
-
-        $password = request('password');
-
-        $newUser = new User;
-
-
-        $newUser->first_name = $firstName;
-
-        $newUser->last_name = $lastName;
-
-        $newUser->email = $email;
-
-        $newUser->password = $password;
-
-        $newUser->role_id = $role_id;
-
-        $newUser->save();
-
-        $allUsers = User::all();
+        $allUsers = User::with('role')->get();
 
         return $allUsers;
 

@@ -40,6 +40,7 @@ $(document).ready(function(){
             <table border="1">
             <tr>
                 <td>Id user</td>
+                <td>Role name</td>
                 <td>First name </td>
                 <td>Last name </td>
                 <td>Email</td>
@@ -63,6 +64,7 @@ $(document).ready(function(){
             return `
             <tr>
             <td>${user.id}</td>
+            <td>${user.role.name}</td>
             <td>${user.first_name}</td>
             <td>${user.last_name}</td>
             <td>${user.email}</td>

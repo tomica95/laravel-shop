@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Watch extends Model
 {
-    //
+    public function brand(){
+
+        return $this->belongsTo(Brand::class);
+
+    }
     public function insert(){
 
         $id = request('id');
