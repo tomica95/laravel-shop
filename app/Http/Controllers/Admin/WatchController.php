@@ -74,5 +74,35 @@ class WatchController extends Controller
 
     }
 
+    public function insert_category(){
+
+        request()->validate([
+            
+            'catName'=>'required|min:2',
+
+            'pictureAlt'=>'required|min:2'
+
+        ]);
+
+        $catName = request('catName');
+
+        $pictureAlt = request('pictureAlt');
+
+        $category = new Brand;
+
+        $category->name = $catName;
+
+        $category->src = "Rolex.jpg";
+
+        $category->alt = $pictureAlt;
+
+        $category->save();
+
+        $categories = Brand::all();
+
+        return $categories;
+
+    }
+
 
 }

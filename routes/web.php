@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/insert-product','WatchController@insert_product');
 
         Route::post('/insert-user','UserController@insert_user');
+
+        Route::post('/insert-category','WatchController@insert_category');
         
         
     });

@@ -46,6 +46,13 @@
     <div id="categories">
     @include('admin_panel.partials.categories')
     </div>
+    </br>
+    </br>
+    </br>
+
+    <div id="insert-category">
+    @include('admin_panel.partials.insert_categories')
+    </div>
 <!-- end content categories -->
 
 
@@ -65,6 +72,8 @@
     <script src="{{asset('js/insert-product-ajax.js')}}"></script>
     
     <script src="{{asset('js/insert-user-ajax.js')}}"></script>
+
+    <script src="{{asset('js/insert-category-ajax.js')}}"></script>
 
     
 
