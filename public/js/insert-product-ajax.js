@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('#insert').on('click','.insert',function(){
 
-        let id_cat = $('.option').val();
+        let id_cat = $('#brand_id').val();
 
         let name = $('.name').val();
 

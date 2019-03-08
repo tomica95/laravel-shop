@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Watch;
 use App\Models\Brand;
+use App\Models\Role;
 
 
 class AdminController extends Controller
@@ -21,6 +22,7 @@ class AdminController extends Controller
 
         $data['categories'] = Brand::all(); //vraca brendove-categorije
 
+        $data['roles'] = Role::all(); //vraca uloge
 
         return view('admin_panel.admin', $data);
     }

@@ -10,24 +10,24 @@
     <div id="users" class="tabele">
     @include('admin_panel.partials.user')
     </div>
-    <hr>
-<!-- end user content -->
+    
 
+    <!-- insert user -->
+        <h1>Insert user</h1>
+        <div id="insert-user">
+            @include('admin_panel.partials.insert_user')
+        </div>
+    <!-- end insert user -->
+    </br></br>
+<!-- end user content -->
+<hr>
 <!-- contenct product -->
 <h1>Products</h1>
     <div id="products" class="tabele">
     @include('admin_panel.partials.products')
     </div><hr>
-<!-- end content product -->
 
-<!-- content categories -->
-    <h1>Categories</h1>
-    <div id="categories">
-    @include('admin_panel.partials.categories')
-    </div>
-<!-- end content categories -->
-
-<!-- insert product -->
+    <!-- insert product -->
 
     <h1>Insert product </h1>
 
@@ -37,7 +37,18 @@
             
         </div>
 
-<!-- end product -->
+<!-- end insert product -->
+<hr>
+<!-- end content product -->
+
+<!-- content categories -->
+    <h1>Categories</h1>
+    <div id="categories">
+    @include('admin_panel.partials.categories')
+    </div>
+<!-- end content categories -->
+
+
 
 </div>
 
@@ -52,6 +63,8 @@
     <script src="{{asset('js/delete-category-ajax.js')}}"></script>
 
     <script src="{{asset('js/insert-product-ajax.js')}}"></script>
+
+    
 
 @endsection
 

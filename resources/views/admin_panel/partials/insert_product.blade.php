@@ -1,7 +1,7 @@
-<select>
+<select id="brand_id">
     <option>Izaberite kategoriju...</option>
     @foreach($categories as $category)
-    <option class="option" value="{{$category->id}}">{{$category->name}}</option>
+    <option value="{{$category->id}}">{{$category->name}}</option>
         
     @endforeach
 </select></br></br></br>

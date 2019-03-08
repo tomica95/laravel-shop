@@ -52,30 +52,18 @@ class WatchController extends Controller
     }
 
     public function insert_product(){
+        
+        request()->validate([
+            'name'=>'required|min:2',
+            'description'=>'required|min:2',
+            'price'=>'required',
+            'id'=>'required'
 
-        $id = request('id');
-
-        $name = request('name');
-
-        $description = request('description');
-
-        $price = request('price');
+        ]);
 
         $watch = new Watch;
 
-        $watch->name = $name;
-
-        $watch->description = $description;
-
-        $watch->src = "Slika.jgp";
-
-        $watch->alt = "Kita";
-
-        $watch->price = $price;
-
-        $watch->brand_id = $id;
-
-        $watch->save();
+        $watch->insert();
 
         $watches = Watch::all();
 
