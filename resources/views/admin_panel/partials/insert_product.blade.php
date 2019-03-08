@@ -6,9 +6,9 @@
     @endforeach
 </select></br></br></br>
 
-    Name:<input type="text" class="name"></br>
-    Description:<input type="text" class="description"></br>
-    Price:<input type="text" class="price"></br>
+    Name:<input type="text" class="name"></br></br>
+    Description:<input type="text" class="description"></br></br>
+    Price:<input type="text" class="price"></br></br>
 
     <input type="button" class="insert" value="Insert">
 

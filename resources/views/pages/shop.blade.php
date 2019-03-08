@@ -22,7 +22,7 @@
 
             <!-- Categories and sort -->
 
-            @include('partials.sort');
+            @include('partials.sort')
 
             <!-- end categories and sort -->
 

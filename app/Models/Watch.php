@@ -25,7 +25,7 @@ class Watch extends Model
 
         $watch->src = "Slika.jgp";
 
-        $watch->alt = "Kita";
+        $watch->alt = "Alt slike";
 
         $watch->price = $price;
 
