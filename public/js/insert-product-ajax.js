@@ -64,6 +64,11 @@ $(document).ready(function(){
                 <button class="delete-watch" value="${watch.id}">Delete</button>
                
                 </td>
+                <td>
+
+                <button class="update-watch" value="${watch.id}">Update</button>
+                
+                </td>
             </tr>
                       `;
         }

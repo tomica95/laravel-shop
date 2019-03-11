@@ -57,6 +57,7 @@ $(document).ready(function(){
             <td>${user.created_at}</td>
             <td>${user.updated_at}</td>
             <td><button class="delete-user" value="${user.id}">Delete</button></td>
+            <td><button class="update-user" value="${user.id}">Update</button></td>
         </tr>
 
             
