@@ -10,6 +10,8 @@
     <div id="users" class="tabele">
     @include('admin_panel.partials.user')
     </div>
+
+    <div id="update-user"></div>
     
 
     <!-- insert user -->
@@ -80,6 +82,8 @@
     <script src="{{asset('js/insert-category-ajax.js')}}"></script>
 
     <script src="{{asset('js/watch-for-update-ajax.js')}}"></script>
+
+    <script src="{{asset('js/user-for-update-ajax.js')}}"></script>
 
     
 

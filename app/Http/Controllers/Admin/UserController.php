@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -47,6 +48,58 @@ class UserController extends Controller
         return $allUsers;
 
        
+    }
+
+    public function show_user_update(){
+
+
+        $id = request()->id;
+
+        $user['korisnik'] = User::find($id);
+
+        $user['uloga'] = Role::all();
+
+
+        return $user;
+
+
+    }
+
+    public function update_user(){
+
+        $first = request()->firstName;
+
+        $last = request()->lastName;
+
+        $email = request()->email;
+
+        $pass = request()->password;
+
+        $id_user = request()->id;
+
+        $role_id = request()->role_id;
+
+
+
+        $user = User::find($id_user);
+
+        $user->first_name = $first;
+
+        $user->last_name = $last;
+
+        $user->email = $email;
+
+        $user->password = $pass;
+
+        $user->role_id = $role_id;
+
+        $user->save();
+
+
+        return redirect('/admin');
+
+        
+
 
     }
 }

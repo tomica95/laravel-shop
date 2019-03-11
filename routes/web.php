@@ -39,6 +39,10 @@ Route::prefix('admin')->group(function(){
         Route::post('/show-product-update','WatchController@show');
 
         Route::post('/update-product','WatchController@update_watch');
+
+        Route::post('/show-user-update','UserController@show_user_update');
+
+        Route::post('/update-user','UserController@update_user');
         
         
     });
