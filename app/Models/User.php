@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    //
+
     public function role(){
 
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class,'role_id','id');
     }
+    
+    
 
     public function insert_user(){
 

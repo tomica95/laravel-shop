@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    public function watches(){
+   
+    public function watches()
+    {
 
-        return $this->hasMany(Watch::class);
-
+        return $this->hasMany(Watch::class,'brand_id','id');
+                     //strani kljuc cele relacije,'kljuc sa kojim spajas strani kljuc'
     }
+
 }
