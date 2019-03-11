@@ -1,22 +1,17 @@
  <!-- Single Product -->
+ @foreach($watches as $watch)
  <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product-1.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product-2.jpg" alt="">
-                                <!-- Favourite -->
-                                <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
-                                </div>
+                                <img src="{{$watch->src}}" alt="{{$watch->alt}}">
                             </div>
                             <!-- Product Description -->
                             <div class="product-description">
-                                <span>topshop</span>
+
                                 <a href="single-product-details.html">
-                                    <h6>Knot Front Mini Dress</h6>
+                                    <h6>{{$watch->name}}</h6>
                                 </a>
-                                <p class="product-price">$80.00</p>
+                                <p class="product-price">{{$watch->price}}</p>
 
                                 <!-- Hover Content -->
                                 <div class="hover-content">
@@ -27,3 +22,5 @@
                                 </div>
                             </div>
                         </div>
+
+@endforeach

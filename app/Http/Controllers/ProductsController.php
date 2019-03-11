@@ -38,10 +38,19 @@ class ProductsController extends Controller
 
         $products['product']=Watch::find($id);
 
+
+        $products['product']->visits =  $products['product']->visits + 1;
+
+        $products['product']->save();
+
+        
+
         
 
         return view('pages.product',$products);
 
 
     }
+
+    
 }
