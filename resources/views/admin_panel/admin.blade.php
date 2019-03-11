@@ -22,10 +22,14 @@
 <!-- end user content -->
 <hr>
 <!-- contenct product -->
+<div id="products-container">
 <h1>Products</h1>
     <div id="products" class="tabele">
     @include('admin_panel.partials.products')
-    </div><hr>
+    </div>
+    <div id="products-update"></div>
+    </div>
+    <hr>
 
     <!-- insert product -->
 
@@ -75,6 +79,8 @@
 
     <script src="{{asset('js/insert-category-ajax.js')}}"></script>
 
+    <script src="{{asset('js/watch-for-update-ajax.js')}}"></script>
+
     
 
 @endsection
@@ -88,5 +94,7 @@
 
 
     }
+
+    
 
 </style>

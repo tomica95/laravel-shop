@@ -35,6 +35,10 @@ Route::prefix('admin')->group(function(){
         Route::post('/insert-user','UserController@insert_user');
 
         Route::post('/insert-category','WatchController@insert_category');
+
+        Route::post('/show-product-update','WatchController@show');
+
+        Route::post('/update-product','WatchController@update_watch');
         
         
     });

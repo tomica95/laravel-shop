@@ -104,5 +104,60 @@ class WatchController extends Controller
 
     }
 
+    public function show(){
+
+        $id_watch = request('id');
+
+        $watch = Watch::find($id_watch);
+
+        return $watch;
+    }
+
+    public function update_watch(){
+
+        $validate = request()->validate([
+            'name'=>'required|min:2',
+            'description'=>'required|min:2',
+            'price'=>'required',
+            'picture'=>'required',
+            'alt'=>'required|min:2'
+        ]);
+
+        $id_watch = request()->id;
+
+        $name = request()->name;
+
+        $description = request()->description;
+
+        $price = request()->price;
+
+        $picture = request()->picture;
+
+        $alt = request()->alt;
+
+
+        $watch = Watch::find($id_watch);
+
+        $watch->name = $name;
+
+        $watch->description = $description;
+
+        $watch->price = $price;
+
+        $watch->src = $picture;
+
+        $watch->alt = $alt;
+
+
+
+        $watch->save();
+
+
+        return redirect('/admin');
+        
+
+
+    }
+
 
 }
