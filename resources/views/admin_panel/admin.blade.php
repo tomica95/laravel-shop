@@ -53,6 +53,8 @@
     @include('admin_panel.partials.categories')
     </div>
     </br>
+    
+    <div id="update-category"></div>
     </br>
     </br>
 
@@ -84,6 +86,8 @@
     <script src="{{asset('js/watch-for-update-ajax.js')}}"></script>
 
     <script src="{{asset('js/user-for-update-ajax.js')}}"></script>
+
+    <script src="{{asset('js/category-for-update-ajax.js')}}"></script>
 
     
 

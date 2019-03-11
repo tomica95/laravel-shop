@@ -43,6 +43,10 @@ Route::prefix('admin')->group(function(){
         Route::post('/show-user-update','UserController@show_user_update');
 
         Route::post('/update-user','UserController@update_user');
+
+        Route::post('/show-category-update','CategoryController@show_category');
+
+        Route::post('/update-category','CategoryController@update_category');
         
         
     });

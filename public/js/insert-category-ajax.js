@@ -57,6 +57,7 @@ $(document).ready(function(){
             <td><img src="${category.src}" width="150" height="120"></td>
             <td>${category.alt}</td>
             <td><button value="${category.id}" class="delete-category">Delete</button></td>
+            <td><button value="${category.id}" class="update-category">Update</button></td>
             </tr>
             `;
         }
