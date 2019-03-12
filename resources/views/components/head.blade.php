@@ -64,10 +64,12 @@
                     <a href="{{url('/logout')}}"><img src="{{asset('img/core-img/heart.svg')}}" alt=""></a>
                 </div>
                 @endif
+                @if(!session()->has('user'))
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="#"><img src="{{asset('img/core-img/user.svg')}}" alt=""></a>
+                    <a href="{{url('/welcome')}}"><img src="{{asset('img/core-img/user.svg')}}" alt=""></a>
                 </div>
+                @endif
                 <!-- Cart Area -->
                 <div class="cart-area">
                     <a href="#" id="essenceCartBtn"><img src="{{asset('img/core-img/bag.svg')}}" alt=""> <span>3</span></a>

@@ -9,7 +9,7 @@
     @csrf 
 
     Email:<input type="text" name="email"></br></br>
-    Password:<input type="text" name="password"></br></br>
+    Password:<input type="password" name="password"></br></br>
 
     <input type="submit" name="login" value="Login"></br>
 </form></br></br></br>

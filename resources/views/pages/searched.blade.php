@@ -52,7 +52,7 @@
                             </div>
                             @endforeach
 
-                            {{$watches->links()}}
+                            {{$watchees->links()}}
 
                            
 
