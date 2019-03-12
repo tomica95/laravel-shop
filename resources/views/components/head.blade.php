@@ -59,9 +59,11 @@
                     </form>
                 </div>
                 <!-- Favourite Area -->
+                @if(session()->has('user'))
                 <div class="favourite-area">
-                    <a href="#"><img src="{{asset('img/core-img/heart.svg')}}" alt=""></a>
+                    <a href="{{url('/logout')}}"><img src="{{asset('img/core-img/heart.svg')}}" alt=""></a>
                 </div>
+                @endif
                 <!-- User Login Info -->
                 <div class="user-login-info">
                     <a href="#"><img src="{{asset('img/core-img/user.svg')}}" alt=""></a>

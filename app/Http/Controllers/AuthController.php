@@ -46,9 +46,17 @@ class AuthController extends Controller
             return redirect()->back()->with('Message','Try again');
 
         }
+        else
+        {
+            
+            request()->session()->put('user',$user);
+        
+            
+
+        }
 
 
-        return redirect()->back()->with('Message','Successfully registered');
+        return redirect('/')->with('Message','Successfully registered');
 
     }
 
@@ -69,7 +77,18 @@ class AuthController extends Controller
 
         return redirect('/login');
 
+ 
+    }
 
-        
+    public function logout(){
+
+        if(request()->session()->has('user')){
+
+            request()->session()->forget('user');
+
+            request()->session()->flush();
+        }
+
+        return redirect('/');
     }
 }

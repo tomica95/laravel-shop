@@ -2,7 +2,7 @@
 
 Route::get('/test',function(){
 
-    dd(request()->session()->get('user'));
+    dd(session()->get('user')->role_id);
 });
 
 Route::get('/', 'HomeController@index');
@@ -13,6 +13,8 @@ Route::post('/register','AuthController@register');
 
 Route::post('/login','AuthController@login');
 
+Route::get('/logout','AuthController@logout');
+
 Route::get('/shop/{id?}','ProductsController@products');
 
 Route::get('/product/{id}','ProductsController@product');
@@ -20,6 +22,9 @@ Route::get('/product/{id}','ProductsController@product');
 Route::get('/search-watches','ProductsController@search');
 
 //ADMIN
+
+Route::group(['middleware' => ['admin']], function () {
+    
 Route::prefix('admin')->group(function(){
 
     Route::namespace('Admin')->group(function () {
@@ -52,4 +57,6 @@ Route::prefix('admin')->group(function(){
         
         
     });
+});
+
 });
