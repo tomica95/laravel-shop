@@ -17,6 +17,8 @@ Route::get('/shop/{id?}','ProductsController@products');
 
 Route::get('/product/{id}','ProductsController@product');
 
+Route::get('/search-watches','ProductsController@search');
+
 //ADMIN
 Route::prefix('admin')->group(function(){
 

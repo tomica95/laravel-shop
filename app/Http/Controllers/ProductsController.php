@@ -52,5 +52,19 @@ class ProductsController extends Controller
 
     }
 
+
+    public function search(){
+
+        $search = request()->search;
+
+        $watch['watches']= Watch::where('name', 'like', '%'.$search.'%')->paginate(2);
+
+        return view('pages.searched',$watch);
+
+
+    }
+
+
+
     
 }
