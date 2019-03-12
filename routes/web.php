@@ -7,7 +7,7 @@ Route::get('/test',function(){
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/welcome','AuthController@show');
+Route::get('/welcome','AuthController@show')->middleware('loggeduser');
 
 Route::post('/register','AuthController@register');
 
