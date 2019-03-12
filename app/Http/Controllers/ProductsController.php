@@ -8,6 +8,10 @@ use App\Models\Watch;
 
 use App\Models\Brand;
 
+use App\Models\Poll;
+
+use App\Models\PollAnswer;
+
 class ProductsController extends Controller
 {
     
@@ -25,6 +29,14 @@ class ProductsController extends Controller
         {
             $data['products']=Watch::all();
         }
+
+        $data['questions'] = Poll::where(
+
+            'active','=',1
+
+        )->get();
+
+        $data['answers']= PollAnswer::all();
 
         $data['brands']=Brand::all();
 

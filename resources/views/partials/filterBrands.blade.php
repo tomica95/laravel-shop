@@ -1,7 +1,12 @@
   <!-- ##### Single Widget ##### -->
   <div class="widget price mb-50">
                             <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">Filter by</h6>
+                            @foreach($questions as $question)
+                            <h6 class="widget-title mb-30">{{$question->question}}</h6>
+                            @endforeach
+                            @foreach($answers as $answer)
+                                <input type="radio" class="poll-answer">{{$answer->answer}}</br></br>
+                            @endforeach
                             <!-- Widget Title 2 -->
                             
                         </div>
