@@ -75,7 +75,7 @@ class AuthController extends Controller
         }
 
 
-        return redirect('/login');
+        return redirect()->back()->with('Message','Email or password incorect');
 
  
     }
