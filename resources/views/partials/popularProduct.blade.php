@@ -8,7 +8,7 @@
                             <!-- Product Description -->
                             <div class="product-description">
 
-                                <a href="single-product-details.html">
+                                <a href="{{url('/product/'.$watch->id)}}">
                                     <h6>{{$watch->name}}</h6>
                                 </a>
                                 <p class="product-price">{{$watch->price}}</p>
