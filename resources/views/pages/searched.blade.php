@@ -29,7 +29,7 @@
                         <div class="row">
 
                             <!-- Single Product -->
-                            @foreach($watches as $searchwatch)
+                            @foreach($watchees as $searchwatch)
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-product-wrapper">
                                     <!-- Product Image -->
