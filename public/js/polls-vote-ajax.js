@@ -5,8 +5,6 @@ $(document).ready(function(){
 
         let id_answer = $(this).val();
 
-        console.log(id_answer);
-
         $.ajax({
             url:BASE_URL+"/insert-answer",
             method:"POST",
@@ -16,10 +14,13 @@ $(document).ready(function(){
             },
             success:function(answers){
 
+                console.log(answers);
 
                 let ispis = `<h5>Answers</h5>`;
+
+                ispis+=`<strong>${answers.message}</strong></br>`;
                 
-                answers.forEach(function(answer){
+                answers.answers.forEach(function(answer){
 
                     ispis+=printanswer(answer);
                 })
