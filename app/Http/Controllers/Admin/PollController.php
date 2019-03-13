@@ -26,4 +26,30 @@ class PollController extends Controller
 
 
     }
+
+    public function insert_poll(){
+
+        $question = request('question');
+
+        $activ = request('activ');
+
+        request()->validate([
+            'question'=>'required|min:2',
+            'activ'=>'required|regex:^[0-1]{1}^'
+        ]);
+
+        $poll= new Poll;
+
+        $poll->question = $question;
+
+        $poll->active = $activ;
+
+        $poll->save();
+
+        $polls =Poll::all();
+
+        return $polls;
+
+
+    }
 }

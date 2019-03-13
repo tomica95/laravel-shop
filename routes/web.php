@@ -58,6 +58,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/update-category','CategoryController@update_category');
 
         Route::delete('/delete-poll','PollController@delete_poll');
+
+        Route::post('/insert-poll','PollController@insert_poll');
         
         
     });

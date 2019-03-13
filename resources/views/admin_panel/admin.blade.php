@@ -68,6 +68,16 @@
 <div id="polls-table"> 
     @include('admin_panel.partials.polls')
     </div>
+    </br>
+    </br>
+
+    <!-- insert poll -->
+
+    <div id="insert-poll">
+     @include('admin_panel.partials.insert-poll')
+    </div>
+
+    <!-- end poll insert -->
 <!-- end content polls -->
 </div>
 
@@ -94,6 +104,8 @@
     <script src="{{asset('js/category-for-update-ajax.js')}}"></script>
 
     <script src="{{asset('js/poll-delete-ajax.js')}}"></script>
+
+    <script src="{{asset('js/insert-poll-ajax.js')}}"></script>
 
     
 
