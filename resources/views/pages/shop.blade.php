@@ -1,9 +1,5 @@
 @extends('master')
 
-@section('css')
-
-@endsection
-
 @section('content')
 
  <!-- ##### Breadcumb Area Start ##### -->

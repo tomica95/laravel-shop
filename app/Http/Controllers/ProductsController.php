@@ -30,13 +30,11 @@ class ProductsController extends Controller
             $data['products']=Watch::all();
         }
 
-        $data['questions'] = Poll::where(
+        $data['question'] = Poll::with('answers')->where(
 
             'active','=',1
 
-        )->get();
-
-        $data['answers']= PollAnswer::all();
+        )->first();
 
         $data['brands']=Brand::all();
 

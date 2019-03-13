@@ -1,12 +1,15 @@
   <!-- ##### Single Widget ##### -->
   <div class="widget price mb-50">
                             <!-- Widget Title -->
-                            @foreach($questions as $question)
+                            
                             <h6 class="widget-title mb-30">{{$question->question}}</h6>
+                            
+                            <div id="answers">
+                            @foreach($question->answers as $answer)
+                                <input type="radio" class="poll-answer" name="radio" id="{{$answer->id}}" value="{{$answer->id}}">{{$answer->answer}}</br></br>
                             @endforeach
-                            @foreach($answers as $answer)
-                                <input type="radio" class="poll-answer">{{$answer->answer}}</br></br>
-                            @endforeach
+                            <div id="poll-result"></div>
+                            </div>
                             <!-- Widget Title 2 -->
                             
                         </div>
@@ -25,3 +28,9 @@
                                 </ul>
                             </div>
                         </div>
+
+                        @section('js')
+
+                            <script src="{{asset('js/polls-vote-ajax.js')}}"></script>
+
+                        @endsection

@@ -21,6 +21,8 @@ Route::get('/product/{id}','ProductsController@product');
 
 Route::get('/search-watches','ProductsController@search');
 
+Route::post('/insert-answer','PollsController@insert_answer');
+
 //ADMIN
 
 Route::group(['middleware' => ['admin']], function () {
