@@ -61,10 +61,14 @@
     <div id="insert-category">
     @include('admin_panel.partials.insert_categories')
     </div>
+    <hr>
 <!-- end content categories -->
 
-
-
+<!-- content polls -->
+<div id="polls-table"> 
+    @include('admin_panel.partials.polls')
+    </div>
+<!-- end content polls -->
 </div>
 
 @endsection
@@ -88,6 +92,8 @@
     <script src="{{asset('js/user-for-update-ajax.js')}}"></script>
 
     <script src="{{asset('js/category-for-update-ajax.js')}}"></script>
+
+    <script src="{{asset('js/poll-delete-ajax.js')}}"></script>
 
     
 
