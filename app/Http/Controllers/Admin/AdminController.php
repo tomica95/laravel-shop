@@ -28,9 +28,6 @@ class AdminController extends Controller
         $data['polls'] = Poll::all(); //return back polls
 
 
-
-        
-
         return view('admin_panel.admin', $data);
     }
 }

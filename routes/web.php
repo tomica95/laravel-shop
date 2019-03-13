@@ -60,6 +60,10 @@ Route::prefix('admin')->group(function(){
         Route::delete('/delete-poll','PollController@delete_poll');
 
         Route::post('/insert-poll','PollController@insert_poll');
+
+        Route::post('/poll-for-update','PollController@poll_for_update');
+
+        Route::post('/update-poll','PollController@update_poll');
         
         
     });

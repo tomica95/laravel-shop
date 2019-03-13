@@ -16,7 +16,7 @@ class CreatePollsTable extends Migration
         Schema::create('polls', function (Blueprint $table) {
             $table->increments('id');
             $table->string('question');
-            $table->integer('active');
+            $table->integer('active')->default(0);
             $table->timestamps();
         });
     }

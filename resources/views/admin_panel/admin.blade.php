@@ -70,7 +70,10 @@
     </div>
     </br>
     </br>
-
+    <!-- poll update -->
+    <div id="poll-update">
+    </div>
+    <!-- end poll update -->
     <!-- insert poll -->
 
     <div id="insert-poll">
@@ -106,6 +109,8 @@
     <script src="{{asset('js/poll-delete-ajax.js')}}"></script>
 
     <script src="{{asset('js/insert-poll-ajax.js')}}"></script>
+
+    <script src="{{asset('js/poll-for-update-ajax.js')}}"></script>
 
     
 

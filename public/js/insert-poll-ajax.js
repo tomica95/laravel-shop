@@ -4,7 +4,6 @@ $(document).ready(function(){
         
         let question = $('.insert-question').val();
 
-        let activ = $('.insert-activ').val();
 
     $.ajax({
 
@@ -13,7 +12,6 @@ $(document).ready(function(){
         data:{
 
             question,
-            activ,
             _token:TOKEN
 
         },
