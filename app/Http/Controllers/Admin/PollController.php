@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Poll;
+use App\Models\PollAnswer;
 
 class PollController extends Controller
 {
@@ -105,13 +106,35 @@ class PollController extends Controller
             $poll->save();
         }
       
-
-        
-
         return redirect()->back();
 
+    }
 
+    public function insert_answer(){
 
+       $id_question = request('id');
+
+       $answer = request('answer');
+
+       request()->validate([
+           
+            'id'=>'required|integer',
+            'answer'=>'required|min:2'
+       ]);
+
+       $answer_new = new PollAnswer;
+
+       $answer_new->answer = $answer;
+
+       $answer_new->poll_id = $id_question;
+
+       $answer_new->save();
+
+       return PollAnswer::with('question')->get();
+
+       
+
+       
 
     }
 }

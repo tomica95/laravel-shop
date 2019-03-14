@@ -82,6 +82,20 @@
 
     <!-- end poll insert -->
 <!-- end content polls -->
+<!-- polls anwers -->
+    <div id="answers">
+        <h1>Answers</h1>
+        @include('admin_panel.partials.answers')
+    
+    </div>
+    </br>
+    <!-- insert answer -->
+        <div id="insert-answer">
+            <h1>Insert answer</h1>
+            @include('admin_panel.partials.insert-answer')
+        </div>
+    <!-- end insert answer -->
+<!-- end content polls answers -->
 </div>
 
 @endsection
@@ -111,6 +125,8 @@
     <script src="{{asset('js/insert-poll-ajax.js')}}"></script>
 
     <script src="{{asset('js/poll-for-update-ajax.js')}}"></script>
+
+    <script src="{{asset('js/insert-answer-ajax.js')}}"></script>
 
     
 

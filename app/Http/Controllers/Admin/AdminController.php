@@ -9,6 +9,7 @@ use App\Models\Watch;
 use App\Models\Brand;
 use App\Models\Role;
 use App\Models\Poll;
+use App\Models\PollAnswer;
 
 
 class AdminController extends Controller
@@ -27,6 +28,7 @@ class AdminController extends Controller
 
         $data['polls'] = Poll::all(); //return back polls
 
+        $data['answers'] = PollAnswer::with('question')->get();
 
         return view('admin_panel.admin', $data);
     }

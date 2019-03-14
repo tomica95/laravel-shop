@@ -64,6 +64,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/poll-for-update','PollController@poll_for_update');
 
         Route::post('/update-poll','PollController@update_poll');
+
+        Route::post('/insert-answer','PollController@insert_answer');
         
         
     });
