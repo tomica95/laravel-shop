@@ -83,16 +83,30 @@ class PollController extends Controller
     
             $poll_active->save();
 
+            $poll = Poll::find($id);
+
+            $poll->question = $question;
+
+            $poll->active = $active;
+
+            $poll->save();
+
+        }
+        else
+        {
+            //for case when all poll are inactive
+
+            $poll = Poll::find($id);
+
+            $poll->question = $question;
+
+            $poll->active = $active;
+
+            $poll->save();
         }
       
 
-        $poll = Poll::find($id);
-
-        $poll->question = $question;
-
-        $poll->active = $active;
-
-        $poll->save();
+        
 
         return redirect()->back();
 
