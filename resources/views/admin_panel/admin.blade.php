@@ -128,6 +128,8 @@
 
     <script src="{{asset('js/insert-answer-ajax.js')}}"></script>
 
+    <script src="{{asset('js/delete-answer-ajax.js')}}"></script>
+
     
 
 @endsection

@@ -66,6 +66,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/update-poll','PollController@update_poll');
 
         Route::post('/insert-answer','PollController@insert_answer');
+
+        Route::delete('/delete-answer','PollController@delete_answer');
         
         
     });

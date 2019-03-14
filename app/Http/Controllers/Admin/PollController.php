@@ -137,4 +137,23 @@ class PollController extends Controller
        
 
     }
+
+    public function delete_answer(){
+
+        $id_answer = request('id');
+
+        $answer = PollAnswer::destroy($id_answer);
+
+        if(!$answer){
+
+            abort(404);
+        }
+        else
+        {
+            return PollAnswer::with('question')->get();
+        }
+
+
+        
+    }
 }
