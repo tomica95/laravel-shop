@@ -57,17 +57,48 @@ class WatchController extends Controller
             'name'=>'required|min:2',
             'description'=>'required|min:2',
             'price'=>'required',
-            'id'=>'required'
+            'brand_id'=>'required',
+            'src'=>'required|image|mimes:jpg,jpeg,png|max:2048',
+            'alt'=>'required|min:2'
 
         ]);
 
+        $pictureAlt = request('alt');
+
+        $image = request()->file('src');
+
+        $src = time().$image->getClientOriginalName();
+
+        $image->move(public_path('/img'),$src);
+
+       
+        $id = request('brand_id');
+
+        $name = request('name');
+
+        $description = request('description');
+
+        $price = request('price');
+
         $watch = new Watch;
 
-        $watch->insert();
+        $watch->name = $name;
 
-        $watches = Watch::all();
+        $watch->description = $description;
 
-        return $watches;
+        $watch->price = $price;
+
+        $watch->src = $src ;
+
+        $watch->alt = $pictureAlt;
+
+        $watch->brand_id = $id;
+
+        $watch->save();
+
+        
+
+        return redirect()->back();
 
 
         
@@ -80,27 +111,33 @@ class WatchController extends Controller
             
             'catName'=>'required|min:2',
 
-            'pictureAlt'=>'required|min:2'
+            'alt'=>'required|min:2',
+
+            'src'=>'required|image|mimes:jpg,jpeg,png|max:2048'
 
         ]);
 
         $catName = request('catName');
 
-        $pictureAlt = request('pictureAlt');
+        $pictureAlt = request('alt');
+
+        $image = request()->file('src');
+
+        $src = time().$image->getClientOriginalName();
+        
+        $image->move(public_path('/img'),$src);
 
         $category = new Brand;
 
         $category->name = $catName;
 
-        $category->src = "Rolex.jpg";
+        $category->src = $src;
 
         $category->alt = $pictureAlt;
 
         $category->save();
 
-        $categories = Brand::all();
-
-        return $categories;
+        return redirect()->back();
 
     }
 

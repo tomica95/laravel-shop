@@ -3,7 +3,7 @@
  <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="{{$watch->src}}" alt="{{$watch->alt}}">
+                                <img src="{{asset('img/'.$watch->src)}}" alt="{{$watch->alt}}">
                             </div>
                             <!-- Product Description -->
                             <div class="product-description">

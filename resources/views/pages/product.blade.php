@@ -12,7 +12,7 @@
 
  <!-- Single Product Thumb -->
  <div class="single_product_thumb clearfix">
- <img src="{{$product->src}}" alt="" width="578" height="516">
+ <img src="{{asset('img/'.$product->src)}}" alt="{{$product->alt}}" width="578" height="516">
         </div>
 
 <!-- Single Product Description -->

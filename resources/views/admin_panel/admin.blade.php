@@ -23,7 +23,7 @@
     </br></br>
 <!-- end user content -->
 <hr>
-<!-- contenct product -->
+<!-- content product -->
 <div id="products-container">
 <h1>Products</h1>
     <div id="products" class="tabele">
@@ -106,10 +106,6 @@
 
     <script src="{{asset('js/delete-user-ajax.js')}}"></script>
 
-    <script src="{{asset('js/delete-category-ajax.js')}}"></script>
-
-    <script src="{{asset('js/insert-product-ajax.js')}}"></script>
-    
     <script src="{{asset('js/insert-user-ajax.js')}}"></script>
 
     <script src="{{asset('js/insert-category-ajax.js')}}"></script>

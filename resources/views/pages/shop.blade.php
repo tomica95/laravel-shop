@@ -30,7 +30,7 @@
                                 <div class="single-product-wrapper">
                                     <!-- Product Image -->
                                     <div class="product-img">
-                                        <img src="{{$product->src}}" alt="{{$product->alt}}">
+                                        <img src="{{asset('img/'.$product->src)}}" alt="{{$product->alt}}">
                                         <!-- Hover Thumb -->
                                         <img class="hover-img" src="{{$product->src}}" alt="{{$product->alt}}">
 
