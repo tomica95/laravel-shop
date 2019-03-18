@@ -25,6 +25,12 @@ class CategoryController extends Controller
 
         $category_update = Brand::find($id_category);
 
+        request()->validate([
+            'name'=>'required|min:2',
+            'alt'=>'required|min:2',
+            'src'=>'required|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+
         $name = request()->name;
 
         $src = request()->src;
@@ -32,6 +38,12 @@ class CategoryController extends Controller
         $alt = request()->alt;
 
         $category_update->name = $name;
+
+        $image = request()->file('src');
+
+        $src = time().$image->getClientOriginalName();
+        
+        $image->move(public_path('/img'),$src);
 
         $category_update->src = $src;
 

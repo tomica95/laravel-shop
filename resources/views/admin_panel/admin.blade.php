@@ -106,6 +106,8 @@
 
     <script src="{{asset('js/delete-user-ajax.js')}}"></script>
 
+    <script src="{{asset('js/delete-category-ajax.js')}}"></script>
+
     <script src="{{asset('js/insert-user-ajax.js')}}"></script>
 
     <script src="{{asset('js/insert-category-ajax.js')}}"></script>

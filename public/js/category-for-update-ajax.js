@@ -17,10 +17,10 @@ $(document).ready(function(){
                     let update_category = `
 
                     <h1>Update categories</h1>
-                    <form method="POST" action="${BASE_URL}/admin/update-category">
+                    <form method="POST" action="${BASE_URL}/admin/update-category" enctype="multipart/form-data">
                     Category name:<input type="text" name="name" value="${category.name}"></br></br>
 
-                    Picture src:<input type="text" name="src" value="${category.src}"></br></br>
+                    Picture src:<input type="file" name="src" value="${category.src}"></br></br>
 
                     Picture alt:<input type="text" name="alt" value="${category.alt}"></br></br>
 
