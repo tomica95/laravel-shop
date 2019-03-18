@@ -8,7 +8,7 @@
                         <!-- ##### Single Widget ##### -->
                         <div class="widget catagory mb-50">
                             <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">Brands</h6>
+                            <h6 class="widget-title mb-30">Filter by:</h6>
 
                             <!--  Categories  -->
                             <div class="catagories-menu">
@@ -26,7 +26,7 @@
                                     <li data-toggle="collapse" data-target="#shoes" class="collapsed">
                                         <a href="#">Prices</a>
                                         <ul class="sub-menu collapse" id="shoes">
-                                            <li><a href="#" class="products-price">till $200</a></li>
+                                            <li><a href="#" class="products-price" data-id="200">&nbsp<$&nbsp200</a></li>
                                             <li><a href="#" class="products-price">from $200 to $500</a><li>
                                             <li><a href="#" class="products-price">from $500 to $1000</a></li>
                                             <li><a href="#" class="products-price">from $1000 to $2000</a></li>
@@ -34,22 +34,7 @@
                                         </ul>
                                     </li>
                                     <!-- Single Item -->
-                                    <li data-toggle="collapse" data-target="#accessories" class="collapsed">
-                                        <a href="#">accessories</a>
-                                        <ul class="sub-menu collapse" id="accessories">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="#">Bodysuits</a></li>
-                                            <li><a href="#">Dresses</a></li>
-                                            <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                            <li><a href="#">Jackets &amp; Coats</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Pants &amp; Leggings</a></li>
-                                            <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                            <li><a href="#">Shirts &amp; Blouses</a></li>
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Sweaters &amp; Knits</a></li>
-                                        </ul>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>

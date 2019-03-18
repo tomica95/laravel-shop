@@ -14,26 +14,19 @@
                             <!-- Widget Title 2 -->
                             
                         </div>
-@endif
+                    @endif
                     
 
-                        <!-- ##### Single Widget ##### -->
-                        <div class="widget brands mb-50">
-                            <!-- Widget Title 2 -->
-                            <p class="widget-title2 mb-30">Brands</p>
-                            <div class="widget-desc">
-                                <ul>
-                                @foreach($brands as $brand)
-                                    <li><a href="{{url('shop/'.$brand->id)}}">{{$brand->name}}</a></li>
-                                @endforeach
-                                </ul>
-                            </div>
-                        </div>
-
+                    
                         @section('js')
 
                             <script src="{{asset('js/polls-vote-ajax.js')}}"></script>
 
                             <script src="{{asset('js/sort-brand.js')}}"></script>
+
+
+                            <script src="{{asset('js/sort-by-price.js')}}"></script>
+
+                            
 
                         @endsection
