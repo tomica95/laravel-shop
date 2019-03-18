@@ -2,8 +2,6 @@
 
 @section('content')
 
-<h1>Ovo je login stranica</h1>
-
 <h2>Login</h2>
 <form method="POST" action="{{url('login')}}">
     @csrf 

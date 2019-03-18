@@ -33,7 +33,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="{{url('/')}}"><img src="{{asset('img/core-img/logo.png')}}" alt=""></a>
+                <a class="nav-brand" href="{{url('/')}}"><img src="{{asset('img/core-img/logo.jpg')}}" width="74" height="54" alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
