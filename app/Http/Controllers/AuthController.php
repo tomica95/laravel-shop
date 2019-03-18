@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+use App\Models\Activity;
+
 class AuthController extends Controller
 {
     //
@@ -18,6 +20,8 @@ class AuthController extends Controller
 
 
     public function register(){
+
+        
 
         request()->validate([
             'firstName'=>'required|min:3|max:15',
@@ -42,12 +46,27 @@ class AuthController extends Controller
 
         if(!$is_register){
 
+            $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+
+            $activity->description = 'User try to registered with email - '.$user->email;
+
+            $activity->save();
             
             return redirect()->back()->with('Message','Try again');
+           
 
         }
         else
         {
+            $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+
+            $activity->description = 'User registered with email - '.$user->email;
+
+            $activity->save();
             
             request()->session()->put('user',$user);
         
@@ -70,6 +89,14 @@ class AuthController extends Controller
         if($user){
 
             request()->session()->put('user',$user);
+
+            $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+
+            $activity->description = 'User loged in with email -'.$user->email.' and with role -'.request()->session()->get('user')->role->name;
+
+            $activity->save();
         
             return redirect('/');
         }
@@ -84,7 +111,17 @@ class AuthController extends Controller
 
         if(request()->session()->has('user')){
 
+            $user_email = request()->session()->get('user')->email;
+
             request()->session()->forget('user');
+
+            $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+
+            $activity->description = 'User logged out with email - '.$user_email;
+
+            $activity->save();
 
             request()->session()->flush();
         }

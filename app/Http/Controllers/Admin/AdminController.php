@@ -10,6 +10,7 @@ use App\Models\Brand;
 use App\Models\Role;
 use App\Models\Poll;
 use App\Models\PollAnswer;
+use App\Models\Activity;
 
 
 class AdminController extends Controller
@@ -30,6 +31,16 @@ class AdminController extends Controller
 
         $data['answers'] = PollAnswer::with('question')->get();
 
+        $data['activities'] = Activity::all();
+
         return view('admin_panel.admin', $data);
+    }
+
+    public function sort_desc(){
+
+        $activities = Activity::orderBy('updated_at','desc')->get();
+
+        return $activities;
+
     }
 }

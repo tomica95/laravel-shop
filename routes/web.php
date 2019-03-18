@@ -78,6 +78,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/answer-for-update','PollController@answer_for_update');
 
         Route::post('/update-answer','PollController@update_answer');
+
+        Route::get('/sort-desc','AdminController@sort_desc');
         
         
     });

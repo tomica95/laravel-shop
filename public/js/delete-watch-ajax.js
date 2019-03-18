@@ -58,7 +58,7 @@ $(document).ready(function(){
         <td>${watch.name}</td>
         <td>${watch.description}</td>
         <td>${watch.price}</td>
-        <td><img src="${watch.src}" width="100" heigth="140"></td>
+        <td><img src="${BASE_URL}img/${watch.src}" width="100" heigth="140"></td>
         <td>${watch.alt}</td>
         <td>
         

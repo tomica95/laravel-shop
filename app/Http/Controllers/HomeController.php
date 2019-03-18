@@ -8,6 +8,8 @@ use App\Models\Brand;
 
 use App\Models\Watch;
 
+use App\Models\Activity;
+
 use Mail;
 
 class HomeController extends Controller
@@ -36,6 +38,8 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+
+
         $this->validate($request,[
 
             'txtName'=>'required|min:2',
@@ -44,6 +48,8 @@ class HomeController extends Controller
             'txtMsg'=>'required|min:5'
 
         ]);
+
+        
 
         Mail::send('emails.contact-message',[
 
@@ -55,6 +61,14 @@ class HomeController extends Controller
 
             $mail->to('toma.selea.103.14@ict.edu.rs')->subject($request->txtQuestion);
         });
+
+        $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+
+            $activity->description = 'User contacted admin with email - '.$request->txtEmail.' and with question'.$request->textQuestion;
+
+            $activity->save();
 
         return redirect()->back()->with('flash_message','Thank you for contacting');
 

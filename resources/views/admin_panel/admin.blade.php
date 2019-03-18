@@ -95,8 +95,14 @@
             <h1>Insert answer</h1>
             @include('admin_panel.partials.insert-answer')
         </div>
+        </br></br>
     <!-- end insert answer -->
 <!-- end content polls answers -->
+<!-- User activity -->
+    
+        
+        @include('admin_panel.partials.activity')
+        
 </div>
 
 @endsection
@@ -130,6 +136,10 @@
     <script src="{{asset('js/delete-answer-ajax.js')}}"></script>
 
     <script src="{{asset('js/update-answer-ajax.js')}}"></script>
+
+    <script src="{{asset('js/sort-activity-desc.js')}}"></script>
+
+    
 
     
 
