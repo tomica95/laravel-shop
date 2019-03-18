@@ -8,6 +8,8 @@ use App\Models\Brand;
 
 use App\Models\Watch;
 
+use Mail;
+
 class HomeController extends Controller
 {
     public function index()
@@ -22,6 +24,43 @@ class HomeController extends Controller
 
 
         return view('welcome',$data);
+    }
+
+    public function contact_show(){
+
+
+
+        return view('pages.contact');
+
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request,[
+
+            'txtName'=>'required|min:2',
+            'txtEmail'=>'required|email',
+            'txtQuestion'=>'required|min:5',
+            'txtMsg'=>'required|min:5'
+
+        ]);
+
+        Mail::send('emails.contact-message',[
+
+            'msg' => $request->txtMsg
+
+        ],function($mail) use($request){
+
+            $mail->from($request->txtEmail, $request->txtName);
+
+            $mail->to('toma.selea.103.14@ict.edu.rs')->subject($request->txtQuestion);
+        });
+
+        return redirect()->back()->with('flash_message','Thank you for contacting');
+
+        
+
+        
     }
 
     

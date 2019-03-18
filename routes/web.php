@@ -23,6 +23,10 @@ Route::get('/search-watches','ProductsController@search');
 
 Route::post('/insert-answer','PollsController@insert_answer');
 
+Route::get('/contact','HomeController@contact_show');
+
+Route::post('/contactto','HomeController@store');
+
 //ADMIN
 
 Route::group(['middleware' => ['admin']], function () {

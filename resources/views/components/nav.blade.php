@@ -6,6 +6,7 @@
                             <li><a href="{{url('/admin')}}">Admin</a></li>
 
                             @endif
+                            <li><a href="{{url('/contact')}}">Contact</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->
