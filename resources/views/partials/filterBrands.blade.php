@@ -1,7 +1,8 @@
   <!-- ##### Single Widget ##### -->
+  @if(!empty($question))
   <div class="widget price mb-50">
                             <!-- Widget Title -->
-                            
+                       
                             <h6 class="widget-title mb-30">{{$question->question}}</h6>
                             
                             <div id="answers">
@@ -13,7 +14,7 @@
                             <!-- Widget Title 2 -->
                             
                         </div>
-
+@endif
                     
 
                         <!-- ##### Single Widget ##### -->

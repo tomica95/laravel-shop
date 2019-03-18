@@ -76,13 +76,18 @@ class PollController extends Controller
         //if user wants to change question to active, put question which was active to inactive
         if($active == 1)
         {
+
             $poll_active = Poll::where([
                 'active'=>'1'
             ])->first();
     
-            $poll_active->active = 0;
+            if($poll_active){
+
+                $poll_active->active = 0;
     
-            $poll_active->save();
+                 $poll_active->save();
+
+             }
 
             $poll = Poll::find($id);
 
