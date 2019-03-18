@@ -7,14 +7,17 @@
                     <div class="single_widget_area d-flex mb-30">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="#"><img src="{{asset('img/core-img/logo2.png')}}" alt=""></a>
+                            <a href="{{url('/')}}"><img src="{{asset('img/core-img/logo.jpg')}}" alt="" width="80" height="50"></a>
                         </div>
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{url('/shop')}}">Shop</a></li>
+                                @if(!request()->session()->has('user'))
+                                <li><a href="{{url('/welcome')}}">Register</a></li>
+                                @endif
+                                <li><a href="{{url('/contact')}}">Contact</a></li>
+                                
                             </ul>
                         </div>
                     </div>

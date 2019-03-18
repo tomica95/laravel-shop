@@ -2,7 +2,9 @@
 
 @section('css')
 
-@endsection
+<link rel="stylesheet" href="{{asset('css/product.css')}}">
+
+@show
 
 @section('content')
 
@@ -11,8 +13,8 @@
 
 
  <!-- Single Product Thumb -->
- <div class="single_product_thumb clearfix">
- <img src="{{asset('img/'.$product->src)}}" alt="{{$product->alt}}" width="578" height="516">
+ <div class="single_product_thumb slika-proizvod clearfix">
+ <img src="{{asset('img/'.$product->src)}}" alt="{{$product->alt}}" width="350" height="250">
         </div>
 
 <!-- Single Product Description -->
