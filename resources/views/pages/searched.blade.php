@@ -12,7 +12,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>dresses</h2>
+                        <h2>Watches</h2>
                     </div>
                 </div>
             </div>
@@ -34,9 +34,9 @@
                                 <div class="single-product-wrapper">
                                     <!-- Product Image -->
                                     <div class="product-img">
-                                        <img src="{{$searchwatch->src}}" alt="{{$searchwatch->alt}}">
+                                        <img src="{{asset('img/'.$searchwatch->src)}}" alt="{{$searchwatch->alt}}" height="150" width="100">
                                         <!-- Hover Thumb -->
-                                        <img class="hover-img" src="{{$searchwatch->src}}" alt="{{$searchwatch->alt}}">
+                                        <img class="hover-img" src="{{asset('img/'.$searchwatch->src)}}" alt="{{$searchwatch->alt}}" height="150" width="100">
 
                                     </div>
 
