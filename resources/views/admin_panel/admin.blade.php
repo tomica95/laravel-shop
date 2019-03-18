@@ -87,7 +87,8 @@
         <h1>Answers</h1>
         @include('admin_panel.partials.answers')
     
-    </div>
+    </div></br>
+    <div id="update-answer"></div>
     </br>
     <!-- insert answer -->
         <div id="insert-answer">
@@ -127,6 +128,8 @@
     <script src="{{asset('js/insert-answer-ajax.js')}}"></script>
 
     <script src="{{asset('js/delete-answer-ajax.js')}}"></script>
+
+    <script src="{{asset('js/update-answer-ajax.js')}}"></script>
 
     
 

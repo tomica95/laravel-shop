@@ -156,4 +156,37 @@ class PollController extends Controller
 
         
     }
+
+    public function answer_for_update(){
+
+        $id = request('id');
+
+        $answer = PollAnswer::find($id);
+
+        return $answer;
+    }
+
+    public function update_answer(){
+
+        $id = request('id');
+
+        request()->validate([
+
+            'update-answer'=>'required|min:2'
+        ]);
+
+        $answer_value = request('update-answer');
+
+        $answer = PollAnswer::find($id);
+
+        $answer->answer = $answer_value;
+
+        
+        $answer->save();
+
+        return redirect()->back();
+
+        
+
+    }
 }

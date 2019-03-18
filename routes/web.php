@@ -68,6 +68,10 @@ Route::prefix('admin')->group(function(){
         Route::post('/insert-answer','PollController@insert_answer');
 
         Route::delete('/delete-answer','PollController@delete_answer');
+
+        Route::post('/answer-for-update','PollController@answer_for_update');
+
+        Route::post('/update-answer','PollController@update_answer');
         
         
     });
