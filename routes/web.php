@@ -27,6 +27,8 @@ Route::get('/contact','HomeController@contact_show');
 
 Route::post('/contactto','HomeController@store');
 
+Route::post('/sort-by-brand','CategoryController@sort_by_brand');
+
 //ADMIN
 
 Route::group(['middleware' => ['admin']], function () {

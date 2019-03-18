@@ -4,9 +4,9 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="hero-content">
-                        <h6>asoss</h6>
-                        <h2>New Collection</h2>
-                        <a href="#" class="btn essence-btn">view collection</a>
+                        <h6>Wathces</h6>
+                        <h2>New watches out</h2>
+                        <a href="{{url('/shop')}}" class="btn essence-btn">view collection</a>
                     </div>
                 </div>
             </div>

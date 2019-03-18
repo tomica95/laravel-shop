@@ -18,7 +18,7 @@
                                         <a href="#">Brands</a>
                                         <ul class="sub-menu collapse show" id="clothing">
                                             @foreach($brands as $brand)
-                                            <li><a href="{{url('shop/'.$brand->id)}}">{{$brand->name}}</a></li>
+                                            <li><a href="" class="sort-brand" id="{{$brand->id}}">{{$brand->name}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -26,17 +26,11 @@
                                     <li data-toggle="collapse" data-target="#shoes" class="collapsed">
                                         <a href="#">Prices</a>
                                         <ul class="sub-menu collapse" id="shoes">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="#">Bodysuits</a></li>
-                                            <li><a href="#">Dresses</a></li>
-                                            <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                            <li><a href="#">Jackets &amp; Coats</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Pants &amp; Leggings</a></li>
-                                            <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                            <li><a href="#">Shirts &amp; Blouses</a></li>
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Sweaters &amp; Knits</a></li>
+                                            <li><a href="#" class="products-price">till $200</a></li>
+                                            <li><a href="#" class="products-price">from $200 to $500</a><li>
+                                            <li><a href="#" class="products-price">from $500 to $1000</a></li>
+                                            <li><a href="#" class="products-price">from $1000 to $2000</a></li>
+                                            <li><a href="#" class="products-price">from $2000 to $3000</a></li>
                                         </ul>
                                     </li>
                                     <!-- Single Item -->
@@ -91,3 +85,5 @@
                                 </div>
                             </div>
                         </div>
+
+                       

@@ -34,4 +34,6 @@
 
                             <script src="{{asset('js/polls-vote-ajax.js')}}"></script>
 
+                            <script src="{{asset('js/sort-brand.js')}}"></script>
+
                         @endsection
