@@ -156,7 +156,7 @@ class WatchController extends Controller
             'name'=>'required|min:2',
             'description'=>'required|min:2',
             'price'=>'required',
-            'picture'=>'required',
+            'src'=>'required|image|mimes:jpg,jpeg,png|max:2048',
             'alt'=>'required|min:2'
         ]);
 
@@ -168,7 +168,11 @@ class WatchController extends Controller
 
         $price = request()->price;
 
-        $picture = request()->picture;
+        $image = request()->file('src');
+
+        $src = time().$image->getClientOriginalName();
+        
+        $image->move(public_path('/img'),$src);
 
         $alt = request()->alt;
 
@@ -181,7 +185,7 @@ class WatchController extends Controller
 
         $watch->price = $price;
 
-        $watch->src = $picture;
+        $watch->src = $src;
 
         $watch->alt = $alt;
 

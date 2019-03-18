@@ -21,11 +21,11 @@ $(document).ready(function(){
                 
                 let forma_update = `
                     <h1>Products update</h1>
-                    <form method="POST" action="${BASE_URL}admin/update-product">
+                    <form method="POST" action="${BASE_URL}admin/update-product" enctype="multipart/form-data">
                         Watch name:<input type="text" value="${watch.name}" name="name"></br></br>
                         Watch description:<input type="text" value="${watch.description}" name="description"></br></br>
                         Watch price:<input type="text" value="${watch.price}" name="price"></br></br>
-                        Input picture:<input type="text" value="putanja.jpg" name="picture"></br></br>
+                        Input picture:<input type="file" value="putanja.jpg" name="src"></br></br>
                         Picture alt:<input type="text" value="${watch.alt}" name="alt"></br></br>
                         <input name='_token' value="${csrfVar}" type='hidden'>
                         <input name="id" value="${watch.id}" type="hidden">
