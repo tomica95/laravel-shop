@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use App\Models\Activity;
 
 class CategoryController extends Controller
 {
@@ -30,6 +31,14 @@ class CategoryController extends Controller
             'alt'=>'required|min:2',
             'src'=>'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."- Updated category ->".request('name');
+
+        $activity->save();
 
         $name = request()->name;
 

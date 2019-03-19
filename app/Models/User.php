@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Activity;
+
 class User extends Model
 {
 
@@ -27,7 +29,6 @@ class User extends Model
         $password = request('password');
 
         $newUser = new User;
-
 
         $newUser->first_name = $firstName;
 

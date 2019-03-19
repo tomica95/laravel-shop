@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Activity;
 
 class UserController extends Controller
 {
@@ -13,7 +14,12 @@ class UserController extends Controller
 
         $id=request('id');
 
-        $user = User::destroy($id);
+        $user = User::find($id);
+
+        $user_first_name = $user->first_name;
+        $user->delete();
+
+        
 
         if(!$user){
             
@@ -21,10 +27,23 @@ class UserController extends Controller
         }
         else
         {
-            $user = User::with('role')->get();
+        
+        $users = User::with('role')->get();
+
            
-            return $user;
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Deleted user with first name: ".$user_first_name;
+
+        $activity->save();
+           
+            return $users;
+
         }
+
+      
 
     }
 
@@ -39,11 +58,27 @@ class UserController extends Controller
 
         ]);
 
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Inserted user->(".request('firstName').")";
+
+        $activity->save();
+
         $user = new User;
 
         $user->insert_user();
 
         $allUsers = User::with('role')->get();
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Inserted user";
+
+        $activity->save();
 
         return $allUsers;
 
@@ -94,6 +129,16 @@ class UserController extends Controller
         $user->role_id = $role_id;
 
         $user->save();
+
+        
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Updated user->(".$user->first_name.")";
+
+        $activity->save();
 
 
         return redirect('/admin');

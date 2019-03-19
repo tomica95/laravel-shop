@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Poll;
 use App\Models\PollAnswer;
+use App\Models\Activity;
 
 class PollController extends Controller
 {
@@ -15,6 +16,14 @@ class PollController extends Controller
         $id = request('id');
 
         $poll = Poll::destroy($id);
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Delete poll question with ID(".$id.")";
+
+        $activity->save();
 
         if(!$poll){
 
@@ -42,6 +51,14 @@ class PollController extends Controller
         $poll->question = $question;
 
         $poll->save();
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."- Insert poll question ->".$question;
+
+        $activity->save();
 
         $polls =Poll::all();
 
@@ -110,6 +127,14 @@ class PollController extends Controller
 
             $poll->save();
         }
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email." - Updated question with id:(".$id.")";
+
+        $activity->save();
       
         return redirect()->back();
 
@@ -126,6 +151,14 @@ class PollController extends Controller
             'id'=>'required|integer',
             'answer'=>'required|min:2'
        ]);
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email." Inserted answer for question with id:(".$id_question.")";
+
+        $activity->save();
 
        $answer_new = new PollAnswer;
 
@@ -147,7 +180,19 @@ class PollController extends Controller
 
         $id_answer = request('id');
 
-        $answer = PollAnswer::destroy($id_answer);
+        $answer = PollAnswer::find($id_answer);
+
+        $odgovor = $answer->answer;
+
+        $answer->delete();
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."Deleted answer ->".$odgovor;
+
+        $activity->save();
 
         if(!$answer){
 
@@ -188,6 +233,14 @@ class PollController extends Controller
 
         
         $answer->save();
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."- Updated answer ->".request('update-answer');
+
+        $activity->save();
 
         return redirect()->back();
 

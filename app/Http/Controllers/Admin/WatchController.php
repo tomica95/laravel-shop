@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Watch;
 use App\Models\Brand;
+use App\Models\Activity;
 
 class WatchController extends Controller
 {
@@ -14,7 +15,11 @@ class WatchController extends Controller
         
         $id = request('id');
 
-        $watch = Watch::destroy($id);
+        $watch = Watch::find($id);
+
+        $watch_name = $watch->name;
+
+        $watch->delete();
 
         if(!$watch){
            
@@ -23,6 +28,14 @@ class WatchController extends Controller
         else
         {
             $watch = Watch::all();
+
+            $activity = new Activity;
+
+            $activity->client = request()->server('HTTP_USER_AGENT');
+    
+            $activity->description = request()->session()->get('user')->email."-Deleted watch-> ".$watch_name;
+    
+            $activity->save();
 
             return $watch;
             
@@ -35,7 +48,11 @@ class WatchController extends Controller
 
         $id = request('id');
 
-        $category=Brand::destroy($id);
+        $category=Brand::find($id);
+
+        $category_name = $category->name;
+
+        $category->delete();
 
         if(!$category){
 
@@ -45,6 +62,14 @@ class WatchController extends Controller
         {
         
         $category = Brand::all();
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Deleted category->".$category_name;
+
+        $activity->save();
 
         return $category;
 
@@ -96,6 +121,14 @@ class WatchController extends Controller
 
         $watch->save();
 
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Inserted product with name->(".request('name').")";
+
+        $activity->save();
+
         
 
         return redirect()->back();
@@ -135,7 +168,13 @@ class WatchController extends Controller
 
         $category->alt = $pictureAlt;
 
-        $category->save();
+        $category->save();   $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Inserted category->(".request('catName').")";
+
+        $activity->save();
 
         return redirect()->back();
 
@@ -188,6 +227,14 @@ class WatchController extends Controller
         $watch->src = $src;
 
         $watch->alt = $alt;
+
+        $activity = new Activity;
+
+        $activity->client = request()->server('HTTP_USER_AGENT');
+
+        $activity->description = request()->session()->get('user')->email."-Updated watch->(".$name.")";
+
+        $activity->save();
 
 
 
