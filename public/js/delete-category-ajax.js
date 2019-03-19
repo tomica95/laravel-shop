@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#categories').on('click','.delete-category',function(){
 
         let id = $(this).val();
-
+        if(confirm('Are you sure ? ')){
         $.ajax({
             url:BASE_URL+"/admin/delete-category",
             method:"DELETE",
@@ -56,7 +56,7 @@ $(document).ready(function(){
             `;
         }
 
-
+    }
     })
 
 

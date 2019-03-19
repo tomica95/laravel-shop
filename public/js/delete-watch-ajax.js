@@ -5,8 +5,8 @@ $(document).ready(function(){
         
         let id = $(this).val();
 
-        console.log(id);
-
+       
+        if(confirm('Are you sure ? ')){
       
 
         $.ajax({
@@ -79,6 +79,8 @@ $(document).ready(function(){
             `;
 
         }
+
+    }
     })
 
 

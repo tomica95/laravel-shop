@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#polls-table').on('click','.delete-poll',function(){
 
         let id_poll= $(this).val();
-
+        if(confirm('Are you sure ? ')){
         $.ajax({
 
             url:BASE_URL+"admin/delete-poll",
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
             }
         })
-
+    }
         
     })
 

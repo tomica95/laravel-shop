@@ -2,11 +2,14 @@ $(document).ready(function(){
 
     $('#users').on('click','.delete-user',function(){
 
+        
+
         let id = $(this).val();
 
         console.log(id);
 
        console.log(BASE_URL);
+       if(confirm('Are you sure ? ')){
 
     $.ajax({
         url:BASE_URL+"admin/delete-user",
@@ -64,7 +67,7 @@ $(document).ready(function(){
             `;
 
         }
-
+    }
     })
 
 })

@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#answers').on('click','.delete-answer',function(){
 
         let id_answer = $(this).val();
-
+        if(confirm('Are you sure ? ')){
         $.ajax({
             url:BASE_URL+"admin/delete-answer",
             method:"delete",
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
             }
         })
-
+    }
     })
 
 })
