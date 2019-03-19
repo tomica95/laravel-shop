@@ -102,6 +102,19 @@ class UserController extends Controller
 
     public function update_user(){
 
+        
+            request()->validate([
+
+                'firstName'=>'required|min:3',
+                'lastName'=>'required|min:3',
+                'email'=>'required|email',
+                'password'=>'required|confirmed|min:3',
+                'role_id'=>'required|integer'
+                
+    
+            ]);
+       
+
         $first = request()->firstName;
 
         $last = request()->lastName;

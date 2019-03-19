@@ -12,6 +12,7 @@
     </div>
 
     <div id="update-user"></div>
+
     
 
     <!-- insert user -->
@@ -20,6 +21,7 @@
             @include('admin_panel.partials.insert_user')
         </div>
     <!-- end insert user -->
+   
     </br></br>
 <!-- end user content -->
 <hr>
@@ -62,6 +64,7 @@
     @include('admin_panel.partials.insert_categories')
     </div>
     <hr>
+    
 <!-- end content categories -->
 
 <!-- content polls -->

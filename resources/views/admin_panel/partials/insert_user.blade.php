@@ -17,3 +17,4 @@ Re-Password:<input type="password" id="password_confirmation" ></br></br>
 
 <input type="button" class="insert-user" value="Insert user">
 
+
