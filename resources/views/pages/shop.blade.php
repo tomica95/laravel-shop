@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-
+    @include('partials.cart')
  <!-- ##### Breadcumb Area Start ##### -->
  <div class="breadcumb_area bg-img" style="background-image: {{asset('url(img/bg-img/breadcumb.jpg')}};">
         <div class="container h-100">

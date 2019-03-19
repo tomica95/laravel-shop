@@ -10,11 +10,3 @@ Picture alt:<input type="text" name="alt"></br></br>
 <input type="submit" value="Insert" class="insert-category">
 
 </form>
-
-@if($errors->any)
-@foreach($errors->all() as $error)
-
-    {{$error}}
-
-@endforeach
-@endif

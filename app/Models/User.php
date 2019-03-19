@@ -6,12 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Activity;
 
+use App\Models\Watch;
+
 class User extends Model
 {
 
     public function role(){
 
         return $this->belongsTo(Role::class,'role_id','id');
+    }
+
+    public function watch_cart(){
+
+        return $this->belongsToMany(Watch::class);
     }
     
     

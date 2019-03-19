@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Watch extends Model
 {   
 
@@ -26,6 +27,11 @@ class Watch extends Model
     }
 
     
+    public function user_cart(){
+
+        return $this->belongsToMany(User::class);
+
+    }
 }
 
 /*

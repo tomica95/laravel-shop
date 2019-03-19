@@ -64,7 +64,14 @@
     @include('admin_panel.partials.insert_categories')
     </div>
     <hr>
-    
+    @if($errors->any())
+    <ul>
+    @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+    @endforeach
+    </ul>
+    @endif
+
 <!-- end content categories -->
 
 <!-- content polls -->

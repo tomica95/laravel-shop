@@ -8,6 +8,8 @@
 
 @section('content')
 
+    @include('partials.cart')
+
  <!-- ##### Single Product Details Area Start ##### -->
  <section class="single_product_details_area d-flex align-items-center">
 
