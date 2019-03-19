@@ -52,6 +52,13 @@ class WatchController extends Controller
 
         $category_name = $category->name;
 
+        $category_src = $category->src;
+
+        $image_path = public_path("img/$category_src");
+
+
+        unlink($image_path);
+
         $category->delete();
 
         if(!$category){
