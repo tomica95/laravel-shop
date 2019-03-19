@@ -21,7 +21,7 @@ class WatchController extends Controller
 
         $src = $watch->src;
 
-        $image_path = public_path("img/$watch_src");
+        $image_path = public_path("img/$src");
 
         unlink($image_path);
 
