@@ -19,6 +19,13 @@ class WatchController extends Controller
 
         $watch_name = $watch->name;
 
+        $src = $watch->src;
+
+        $image_path = public_path("img/$watch_src");
+
+        unlink($image_path);
+
+
         $watch->delete();
 
         if(!$watch){
@@ -55,7 +62,6 @@ class WatchController extends Controller
         $category_src = $category->src;
 
         $image_path = public_path("img/$category_src");
-
 
         unlink($image_path);
 
