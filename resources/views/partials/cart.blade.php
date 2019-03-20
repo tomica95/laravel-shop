@@ -23,9 +23,11 @@
                     
                     
                 </ul>
+                @if(request()->session()->has('user'))
                 <div class="checkout-btn mt-100">
                     <a href="{{url('/delete-cart')}}" id="button-buy"class="btn essence-btn">Buy</a>
                 </div>
+                @endif
             </div>
             </div>
     </div>

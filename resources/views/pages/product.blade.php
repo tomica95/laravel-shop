@@ -34,9 +34,11 @@
         <!-- Cart & Favourite Box -->
         <div class="cart-fav-box d-flex align-items-center">
             <!-- Cart -->
+            @if(request()->session()->has('user') && !$product->user_cart->contains(request()->session()->get('user')->id))
             <div class="add-to-cart-btn">
                                         <a href="{{url('addtocart/watchid/'.$product->id)}}" class="btn essence-btn">Add to Cart</a>
                                     </div>
+            @endif
         </div>
     </form>
 </div>

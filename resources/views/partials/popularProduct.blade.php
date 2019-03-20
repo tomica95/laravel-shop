@@ -14,15 +14,13 @@
                                 <p class="product-price">{{$watch->price}}</p>
 
                                 <!-- Hover Content -->
-                                @if(request()->session()->has('user'))
-                                @if(!$watch->user_cart->contains((request()->session()->has('user')) && request()->session()->get('user')->id))
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="{{url('addtocart/watchid/'.$watch->id)}}" class="btn essence-btn">Add to Cart</a>
+                                @if(request()->session()->has('user') && !$watch->user_cart->contains(request()->session()->get('user')->id))
+                                    <div class="hover-content">
+                                        <!-- Add to Cart -->
+                                        <div class="add-to-cart-btn">
+                                            <a href="{{url('addtocart/watchid/'.$watch->id)}}" class="btn essence-btn">Add to Cart</a>
+                                        </div>
                                     </div>
-                                </div>
-                                @endif
                                 @endif
                             </div>
                         </div>

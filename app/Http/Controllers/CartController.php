@@ -32,7 +32,14 @@ class CartController extends Controller
 
         $id_user = request()->session()->get('user')->id;
 
-        $user = User::find($id_user)->with('watch_cart')->first();
+        $user = User::where([
+
+            'id'=>$id_user
+
+        ])->with('watch_cart')->first();
+
+        
+
         $data['products'] = $user->watch_cart;
 
         $data['price']=$user->watch_cart->sum('price');
@@ -47,7 +54,7 @@ class CartController extends Controller
 
         $id_user = request()->session()->get('user')->id;
 
-        $user = User::find($id_user)->with('watch_cart')->first();
+        $user = User::where('id', $id_user)->with('watch_cart')->first();
 
         foreach($user->watch_cart as $watch){
 
