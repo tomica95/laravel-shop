@@ -9,6 +9,8 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/welcome','AuthController@show')->middleware('loggeduser');
 
+Route::get('/about','HomeController@author');
+
 Route::post('/register','AuthController@register')->middleware('loggeduser');
 
 Route::post('/login','AuthController@login')->middleware('loggeduser');

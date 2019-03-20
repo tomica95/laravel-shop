@@ -13,10 +13,12 @@
                         <div class="footer_menu">
                             <ul>
                                 <li><a href="{{url('/shop')}}">Shop</a></li>
+                                <li><a href="{{url('/about')}}">About author</a></li>
                                 @if(!request()->session()->has('user'))
                                 <li><a href="{{url('/welcome')}}">Register</a></li>
                                 @endif
                                 <li><a href="{{url('/contact')}}">Contact</a></li>
+                                <li><a href="dokumentacija.pdf">Documentation</a></li>
                                 
                             </ul>
                         </div>

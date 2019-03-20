@@ -27,6 +27,10 @@ class HomeController extends Controller
 
         return view('welcome',$data);
     }
+    public function author(){
+
+        return view('pages.author');
+    }
 
     public function contact_show(){
 

@@ -7,6 +7,7 @@
 
                             @endif
                             <li><a href="{{url('/contact')}}">Contact</a></li>
+                            <li><a href="{{url('/about')}}">About author</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->
