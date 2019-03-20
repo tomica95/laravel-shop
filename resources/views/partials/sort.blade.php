@@ -23,16 +23,7 @@
                                         </ul>
                                     </li>
                                     <!-- Single Item -->
-                                    <li data-toggle="collapse" data-target="#shoes" class="collapsed">
-                                        <a href="#">Prices</a>
-                                        <ul class="sub-menu collapse" id="shoes">
-                                            <li><a href="#" class="products-price" data-id="200">&nbsp<$&nbsp200</a></li>
-                                            <li><a href="#" class="products-price">from $200 to $500</a><li>
-                                            <li><a href="#" class="products-price">from $500 to $1000</a></li>
-                                            <li><a href="#" class="products-price">from $1000 to $2000</a></li>
-                                            <li><a href="#" class="products-price">from $2000 to $3000</a></li>
-                                        </ul>
-                                    </li>
+                                    
                                     <!-- Single Item -->
                                     
                                 </ul>
@@ -55,18 +46,7 @@
                                 <div class="product-topbar d-flex align-items-center justify-content-between">
                                    
                                     <!-- Sorting -->
-                                    <div class="product-sorting d-flex">
-                                        <p>Sort by:</p>
-                                        <form action="#" method="get">
-                                            <select name="select" id="sortByselect">
-                                                <option value="value">Highest Rated</option>
-                                                <option value="value">Newest</option>
-                                                <option value="value">Price: $$ - $</option>
-                                                <option value="value">Price: $ - $$</option>
-                                            </select>
-                                            <input type="submit" class="d-none" value="">
-                                        </form>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
