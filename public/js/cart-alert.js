@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    $('#button-buy').on('click',function(e){
+    $('#button-buy').on('click',function(){
 
-        e.preventDefault();
+        
 
         alert("You have successfully purchased your items");
     })

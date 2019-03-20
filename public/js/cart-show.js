@@ -4,14 +4,14 @@ $(document).ready(function(){
 
        e.preventDefault();
 
-       console.log("radi");
+       
         
             $.ajax({
             url:BASE_URL+"/show-cart",
             method:"GET",
             success:function(data){
 
-                
+                console.log(data);
                 
                 let ispis = ``;
 
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
                 })
 
-                    $('#productsplace').append(ispis);
+                    $('#productsplace').html(ispis);
 
                 let total = `
 

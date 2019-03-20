@@ -42,4 +42,19 @@ class CartController extends Controller
         return $data;
 
     }
+
+    public function delete(){
+
+        $id_user = request()->session()->get('user')->id;
+
+        $user = User::find($id_user)->with('watch_cart')->first();
+
+        foreach($user->watch_cart as $watch){
+
+            $user->watch_cart()->detach($watch->id);
+
+        }
+
+        return redirect('/');
+    }
 }

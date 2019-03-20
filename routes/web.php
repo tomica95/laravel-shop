@@ -33,6 +33,8 @@ Route::get('/addtocart/watchid/{id}','CartController@insert');
 
 Route::get('/show-cart','CartController@show');
 
+Route::get('/delete-cart','CartController@delete');
+
 //ADMIN
 
 Route::group(['middleware' => ['admin']], function () {

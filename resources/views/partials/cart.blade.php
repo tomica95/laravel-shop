@@ -24,7 +24,7 @@
                     
                 </ul>
                 <div class="checkout-btn mt-100">
-                    <a href="" id="button-buy"class="btn essence-btn">Buy</a>
+                    <a href="{{url('/delete-cart')}}" id="button-buy"class="btn essence-btn">Buy</a>
                 </div>
             </div>
             </div>

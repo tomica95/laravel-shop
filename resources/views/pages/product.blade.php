@@ -34,8 +34,9 @@
         <!-- Cart & Favourite Box -->
         <div class="cart-fav-box d-flex align-items-center">
             <!-- Cart -->
-            <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
-            
+            <div class="add-to-cart-btn">
+                                        <a href="{{url('addtocart/watchid/'.$product->id)}}" class="btn essence-btn">Add to Cart</a>
+                                    </div>
         </div>
     </form>
 </div>
