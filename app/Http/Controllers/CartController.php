@@ -23,11 +23,23 @@ class CartController extends Controller
         $watch->user_cart()->attach($user_id);
 
 
-        return $watch->user_cart;
+       
         return redirect()->back();
 
+    }
 
-        
+    public function show(){
+
+        $id_user = request()->session()->get('user')->id;
+
+        $user = User::find($id_user)->with('watch_cart')->first();
+        $data['products'] = $user->watch_cart;
+
+        $data['price']=$user->watch_cart->sum('price');
+
+        $data['number']=$user->watch_cart->count('watch_id');
+
+        return $data;
 
     }
 }

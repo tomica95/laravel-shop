@@ -75,6 +75,10 @@
     <script src="{{asset('js/classy-nav.min.js')}}"></script>
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
+    <!-- cart js -->
+    <script src="{{asset('js/cart-show.js')}}"></script>
+    <!-- cart js alert -->
+    <script src="{{asset('js/cart-alert.js')}}"></script>
 
     @yield('js')
 

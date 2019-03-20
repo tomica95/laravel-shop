@@ -71,8 +71,8 @@
                 </div>
                 @endif
                 <!-- Cart Area -->
-                <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="{{asset('img/core-img/bag.svg')}}" alt=""> <span>3</span></a>
+                <div class="cart-area cart">
+                    <a href="" id="essenceCartBtn"><img src="{{asset('img/core-img/bag.svg')}}" alt=""> <span>1</span></a>
                 </div>
             </div>
 

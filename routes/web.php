@@ -31,6 +31,8 @@ Route::post('/sort-by-brand','CategoryController@sort_by_brand');
 
 Route::get('/addtocart/watchid/{id}','CartController@insert');
 
+Route::get('/show-cart','CartController@show');
+
 //ADMIN
 
 Route::group(['middleware' => ['admin']], function () {
